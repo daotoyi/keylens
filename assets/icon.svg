@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="KeyLens">
+  <defs>
+    <linearGradient id="bg" x1="16" y1="8" x2="112" y2="122" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F15C53"/>
+      <stop offset=".56" stop-color="#C9322E"/>
+      <stop offset="1" stop-color="#781C1D"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="37" y1="31" x2="96" y2="101" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD990"/>
+      <stop offset=".55" stop-color="#FFBE58"/>
+      <stop offset="1" stop-color="#F08A3D"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#3D0A0B" flood-opacity=".34"/>
+    </filter>
+  </defs>
+  <rect width="128" height="128" rx="29" fill="url(#bg)"/>
+  <path d="M18 38C29 19 47 12 70 12c22 0 39 10 48 29" fill="none" stroke="#FFC1BB" stroke-width="2" stroke-linecap="round" opacity=".36"/>
+  <rect x="12" y="12" width="104" height="104" rx="22" fill="none" stroke="#FFD6D1" stroke-width="1.5" opacity=".28"/>
+  <g filter="url(#shadow)">
+    <path d="M45 44.5c0-10.2 8.3-18.5 18.5-18.5S82 34.3 82 44.5c0 8.3-5.5 15.4-13 17.7l-3.5 1v7.3l8.2 8.2-7.6 7.6-8.5-8.5-8.6 8.6-7.7-7.7 8.7-8.7V62.2c-7.4-2.4-12.8-9.4-12.8-17.7Z" fill="url(#gold)"/>
+    <circle cx="63.5" cy="44.5" r="8.4" fill="#7E2020" opacity=".94"/>
+    <circle cx="63.5" cy="44.5" r="3.2" fill="#FFE6B4"/>
+    <path d="m78 76 15.5 15.5-7.6 7.6L70.4 83.6" fill="url(#gold)"/>
+  </g>
+  <path d="m98 23 2.4 6.1 6.1 2.4-6.1 2.4-2.4 6.1-2.4-6.1-6.1-2.4 6.1-2.4L98 23Z" fill="#FF8E64"/>
+  <path d="m23 88 1.7 4.3 4.3 1.7-4.3 1.7L23 100l-1.7-4.3L17 94l4.3-1.7L23 88Z" fill="#FFD6D1" opacity=".86"/>
+</svg>

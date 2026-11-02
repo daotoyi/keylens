@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN" data-i18n-document-title="options.documentTitle">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KeyLens 设置</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="welcome.html">
+          <img src="../assets/icon-48.png" alt="" />
+          <span>
+            <strong>KeyLens</strong>
+            <small data-i18n="options.brandTagline">网页关键信息工作台</small>
+          </span>
+        </a>
+        <div class="header-actions">
+          <span class="plan-chip" id="headerPlan">FREE</span>
+          <button class="language-button" id="languageButton" type="button" data-i18n-aria-label="popup.switchLanguage">EN</button>
+          <button class="button button-ghost" id="closePageButton" type="button">
+            <i data-lucide="x"></i>
+            <span data-i18n="common.close">关闭</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="plan-band">
+        <div class="band-inner plan-layout">
+          <div class="plan-copy">
+            <div class="kicker" data-i18n="options.planKicker">方案与授权</div>
+            <h1 id="planTitle">你的本地提取器</h1>
+            <p id="planDescription">免费版每天 12 次，所有页面内容只在本机处理。</p>
+            <div class="plan-status-row">
+              <span class="status-pill" id="planStatus">FREE</span>
+              <span id="quotaDescription">今日剩余 12/12 次</span>
+            </div>
+            <div class="plan-actions">
+              <button class="button button-primary" id="trialButton" type="button">
+                <i data-lucide="timer-reset"></i>
+                <span data-i18n="options.trial">开启 7 天 Pro 试用</span>
+              </button>
+              <button class="button button-secondary" id="deactivateButton" type="button" hidden>
+                <i data-lucide="log-out"></i>
+                <span data-i18n="options.deactivate">返回免费版</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="entitlement-panel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-label" data-i18n="options.licenseLabel">激活许可证</div>
+                <div class="panel-title" data-i18n="options.licenseTitle">连接到 Pro</div>
+              </div>
+              <i data-lucide="badge-check"></i>
+            </div>
+            <div class="license-input-row">
+              <input
+                id="licenseInput"
+                type="password"
+                autocomplete="off"
+                data-i18n-placeholder="options.licensePlaceholder"
+                placeholder="输入 Pro 激活码"
+              />
+              <button class="button button-primary small" id="activateButton" type="button" data-i18n="options.activate">激活</button>
+            </div>
+            <button class="link-button" id="checkoutButton" type="button">
+              <span data-i18n="options.openCheckout">打开购买页面</span>
+              <i data-lucide="arrow-up-right"></i>
+            </button>
+            <p class="panel-note" id="checkoutNote">支付入口可在下方发布设置中配置。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="band-inner">
+          <div class="section-head">
+            <div>
+              <div class="kicker">FREE VS PRO</div>
+              <h2 data-i18n="options.featureBoundary">功能边界</h2>
+            </div>
+            <p data-i18n="options.featureBoundaryDesc">核心提取免费可用，Pro 购买的是效率、规模和自动化能力。</p>
+          </div>
+
+          <div class="comparison" role="table" aria-label="免费版与 Pro 对比">
+            <div class="comparison-row comparison-head" role="row">
+              <span role="columnheader" data-i18n="options.capability">能力</span>
+              <span role="columnheader">Free</span>
+              <span role="columnheader">Pro</span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="profile.brief">页面摘要</span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="options.contactExtraction">联系方式提取</span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="options.dailyExtraction">每日页面提取</span>
+              <span role="cell" data-i18n="options.freeDailyValue">12 次</span>
+              <span role="cell" class="yes" data-i18n="options.unlimited">不限</span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="options.rowsPerPage">单页列表行数</span>
+              <span role="cell" data-i18n="options.freeRowsValue">30 行</span>
+              <span role="cell" class="yes" data-i18n="options.proRowsValue">300 行</span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="options.structuredModes">文章 / 商品 / 列表模式</span>
+              <span role="cell" class="no">—</span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="options.customAndSelection">自定义字段与选中文本</span>
+              <span role="cell" class="no">—</span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="options.batchTabs">批量当前标签页</span>
+              <span role="cell" class="no">—</span>
+              <span role="cell" class="yes" data-i18n="options.batchValue">最多 8 页</span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="options.jsonHistory">JSON 与 50 条历史</span>
+              <span role="cell" class="no">—</span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+            </div>
+            <div class="comparison-row" role="row">
+              <span role="cell" data-i18n="options.csvExport">CSV 导出</span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+              <span role="cell" class="yes"><i data-lucide="check"></i></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band alt-band">
+        <div class="band-inner settings-layout">
+          <div class="settings-main">
+            <div class="section-head compact-head">
+              <div>
+                <div class="kicker">EXTRACTION</div>
+                <h2 data-i18n="options.extraction">提取偏好</h2>
+              </div>
+            </div>
+            <form id="settingsForm">
+              <div class="setting-row">
+                <div class="setting-copy">
+                  <label for="enabledToggle" data-i18n="options.enable">在网页中启用 KeyLens</label>
+                  <p data-i18n="options.enableDesc">关闭后内容脚本会拒绝一切提取请求。</p>
+                </div>
+                <label class="switch">
+                  <input id="enabledToggle" type="checkbox" />
+                  <span></span>
+                </label>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-copy">
+                  <label for="defaultProfileSelect" data-i18n="options.defaultProfile">默认提取模式</label>
+                  <p data-i18n="options.defaultProfileDesc">打开扩展时优先选中的模式。</p>
+                </div>
+                <select id="defaultProfileSelect">
+                  <option value="brief" data-i18n="profile.brief">页面摘要</option>
+                  <option value="contacts" data-i18n="profile.contacts">联系方式</option>
+                  <option value="article" data-i18n="profile.article">文章结构</option>
+                  <option value="product" data-i18n="profile.product">商品信息</option>
+                  <option value="list" data-i18n="profile.list">列表表格</option>
+                  <option value="custom" data-i18n="profile.customFields">自定义字段</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-copy">
+                  <label for="languageSelect" data-i18n="options.language">界面语言</label>
+                  <p data-i18n="options.languageDesc">支持中文与 English，可跟随浏览器。</p>
+                </div>
+                <select id="languageSelect">
+                  <option value="auto" data-i18n="options.languageAuto">跟随浏览器</option>
+                  <option value="zh-CN" data-i18n="options.languageZh">中文</option>
+                  <option value="en" data-i18n="options.languageEn">English</option>
+                </select>
+              </div>
+
+              <div class="setting-row is-stacked">
+                <div class="setting-copy">
+                  <label for="customFieldsSettings" data-i18n="options.customFields">常用自定义字段</label>
+                  <p data-i18n="options.customFieldsDesc">逗号分隔。自定义字段为 Pro 能力。</p>
+                </div>
+                <input
+                  id="customFieldsSettings"
+                  type="text"
+                  data-i18n-placeholder="options.customPlaceholder"
+                  placeholder="例如：标题, 作者, 价格, 邮箱, 公司"
+                />
+              </div>
+
+              <div class="setting-row is-stacked">
+                <div class="setting-copy">
+                  <label for="excludedDomainsInput" data-i18n="options.excludedDomains">排除站点</label>
+                  <p data-i18n="options.excludedDomainsDesc">每行一个域名，支持子域名匹配。</p>
+                </div>
+                <textarea
+                  id="excludedDomainsInput"
+                  rows="4"
+                  placeholder="bank.example.com&#10;internal.example.com"
+                ></textarea>
+              </div>
+
+              <div class="form-actions">
+                <span id="saveStatus" data-i18n="options.autoSave">设置会自动保存</span>
+                <button class="button button-primary" type="submit">
+                  <i data-lucide="save"></i>
+                  <span data-i18n="options.saveSettings">保存设置</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="publish-panel">
+            <div class="panel-label" data-i18n="options.publishConfig">发布配置</div>
+            <h3 data-i18n="options.checkoutTitle">支付入口</h3>
+            <p data-i18n="options.checkoutDesc">填入正式结账页面。许可证校验仍需在发布版中接服务端。</p>
+            <label for="checkoutUrlInput">Checkout URL</label>
+            <input id="checkoutUrlInput" type="url" placeholder="https://checkout.example.com/keylens" />
+            <button class="button button-secondary full" id="savePublishButton" type="button">
+              <i data-lucide="link"></i>
+              <span data-i18n="options.saveLink">保存链接</span>
+            </button>
+            <details class="dev-note">
+              <summary data-i18n="options.demoCode">开发演示激活码</summary>
+              <code>KEYLENS-PRO-DEMO</code>
+              <p data-i18n="options.demoDesc">仅用于本地验收。正式上架前请移除该硬编码并接入服务端许可证。</p>
+            </details>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-band">
+        <div class="band-inner">
+          <div class="section-head compact-head">
+            <div>
+              <div class="kicker">DATA & PRIVACY</div>
+              <h2 data-i18n="options.dataTitle">数据管理</h2>
+            </div>
+          </div>
+          <div class="data-grid">
+            <div class="data-row">
+              <div class="data-icon"><i data-lucide="shield-check"></i></div>
+              <div>
+                <strong data-i18n="options.localProcessing">本地处理</strong>
+                <p data-i18n="options.localDesc">页面文本不会上传到 KeyLens 服务器；当前版本没有远程 AI 请求。</p>
+              </div>
+            </div>
+            <div class="data-row">
+              <div class="data-icon"><i data-lucide="library-big"></i></div>
+              <div>
+                <strong data-i18n="options.historyStorage">历史与配置</strong>
+                <p data-i18n="options.historyDesc">使用 Chrome 本地存储。Pro 历史最多 50 条，可随时删除。</p>
+              </div>
+            </div>
+            <div class="data-actions">
+              <button class="button button-secondary" id="exportBackupButton" type="button">
+                <i data-lucide="download"></i><span data-i18n="options.exportData">导出本地数据</span>
+              </button>
+              <button class="button button-danger" id="clearHistoryButton" type="button">
+                <i data-lucide="trash-2"></i><span data-i18n="options.clearHistory">清空历史</span>
+              </button>
+              <button class="button button-danger" id="resetButton" type="button">
+                <i data-lucide="rotate-ccw"></i><span data-i18n="options.resetAll">重置全部</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>KeyLens 1.1.0 · Manifest V3</span>
+        <span data-i18n="options.footerPrivacy">本地优先 · 可审计权限 · 无隐藏额度</span>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="../vendor/lucide.min.js"></script>
+    <script src="i18n.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

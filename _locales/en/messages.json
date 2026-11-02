@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "KeyLens — Web Key Information Extractor"
+  },
+  "extShortName": {
+    "message": "KeyLens"
+  },
+  "extDescription": {
+    "message": "Extract summaries, contacts, products, articles and table rows from any web page. Free locally; Pro unlocks custom fields, batch tabs and history."
+  },
+  "commandOpen": {
+    "message": "Open KeyLens"
+  }
+}

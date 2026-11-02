@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN" data-i18n-document-title="popup.documentTitle">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KeyLens</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-mark" src="../assets/icon-48.png" alt="" />
+          <div>
+            <div class="brand-name">KeyLens</div>
+            <div class="brand-note" data-i18n="popup.localFirst">LOCAL-FIRST</div>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <span class="plan-badge" id="planBadge" data-plan="free">FREE</span>
+          <button class="language-button" id="languageButton" type="button" data-i18n-aria-label="popup.switchLanguage" aria-label="切换语言">EN</button>
+          <button class="icon-button" id="historyButton" type="button" data-i18n-aria-label="popup.history" aria-label="历史记录">
+            <i data-lucide="history"></i>
+          </button>
+          <button class="icon-button" id="settingsButton" type="button" data-i18n-aria-label="popup.settings" aria-label="设置">
+            <i data-lucide="settings-2"></i>
+          </button>
+        </div>
+      </header>
+
+      <main id="captureView" class="main-view">
+        <section class="page-strip" data-i18n-aria-label="popup.currentPage" aria-label="当前页面">
+          <div class="site-avatar" id="siteAvatar">K</div>
+          <div class="page-copy">
+            <div class="page-title" id="pageTitle" data-i18n="popup.loadingPage">正在读取当前页面…</div>
+            <div class="page-host" id="pageHost" data-i18n="popup.waitingPage">等待页面连接</div>
+          </div>
+          <button class="mini-button" id="refreshPageButton" type="button" data-i18n-aria-label="popup.refreshPage" aria-label="刷新页面信息">
+            <i data-lucide="refresh-cw"></i>
+          </button>
+        </section>
+
+        <section class="usage-row">
+          <div class="usage-main">
+            <span class="usage-dot" id="usageDot"></span>
+            <span id="quotaText" data-i18n="popup.quotaLoading">读取额度中…</span>
+          </div>
+          <button class="text-button" id="upgradeButton" type="button">
+            <i data-lucide="crown"></i>
+            <span data-i18n="popup.upgrade">升级 Pro</span>
+          </button>
+        </section>
+
+        <section class="extract-panel">
+          <div class="section-heading">
+            <div>
+              <h1 data-i18n="popup.extractTitle">提取关键内容</h1>
+              <p id="profileHint">标题、摘要、关键点与来源</p>
+            </div>
+            <button class="mini-button" id="batchButton" type="button" data-i18n-aria-label="popup.batchAria" aria-label="批量提取当前窗口标签页">
+              <i data-lucide="layers-3"></i>
+            </button>
+          </div>
+
+          <div class="profile-grid" id="profileGrid">
+            <button class="profile-option is-active" type="button" data-profile="brief">
+              <span class="profile-icon"><i data-lucide="file-text"></i></span>
+              <span class="profile-name" data-i18n="profile.brief">页面摘要</span>
+              <span class="profile-lock" hidden><i data-lucide="lock-keyhole"></i></span>
+            </button>
+            <button class="profile-option" type="button" data-profile="contacts">
+              <span class="profile-icon"><i data-lucide="contact-round"></i></span>
+              <span class="profile-name" data-i18n="profile.contacts">联系方式</span>
+              <span class="profile-lock" hidden><i data-lucide="lock-keyhole"></i></span>
+            </button>
+            <button class="profile-option" type="button" data-profile="article">
+              <span class="profile-icon"><i data-lucide="newspaper"></i></span>
+              <span class="profile-name" data-i18n="profile.article">文章结构</span>
+              <span class="profile-lock"><i data-lucide="lock-keyhole"></i></span>
+            </button>
+            <button class="profile-option" type="button" data-profile="product">
+              <span class="profile-icon"><i data-lucide="package-search"></i></span>
+              <span class="profile-name" data-i18n="profile.product">商品信息</span>
+              <span class="profile-lock"><i data-lucide="lock-keyhole"></i></span>
+            </button>
+            <button class="profile-option" type="button" data-profile="list">
+              <span class="profile-icon"><i data-lucide="table-2"></i></span>
+              <span class="profile-name" data-i18n="profile.list">列表表格</span>
+              <span class="profile-lock"><i data-lucide="lock-keyhole"></i></span>
+            </button>
+            <button class="profile-option" type="button" data-profile="custom">
+              <span class="profile-icon"><i data-lucide="wand-sparkles"></i></span>
+              <span class="profile-name" data-i18n="profile.custom">自定义</span>
+              <span class="profile-lock"><i data-lucide="lock-keyhole"></i></span>
+            </button>
+          </div>
+
+          <div class="custom-field-wrap" id="customFieldWrap" hidden>
+            <label for="customFieldsInput" data-i18n="popup.customFields">字段</label>
+            <input
+              id="customFieldsInput"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              data-i18n-placeholder="popup.customPlaceholder"
+              placeholder="例如：标题, 作者, 价格, 邮箱"
+            />
+          </div>
+
+          <button class="primary-button" id="extractButton" type="button">
+            <span class="button-icon"><i data-lucide="scan-search"></i></span>
+            <span class="button-copy">
+              <strong id="extractButtonLabel">提取关键内容</strong>
+              <small id="extractButtonHint">空结果不计次</small>
+            </span>
+            <i class="button-arrow" data-lucide="arrow-right"></i>
+          </button>
+
+          <button class="selection-button" id="selectionButton" type="button">
+            <i data-lucide="text-select"></i>
+            <span data-i18n="popup.readSelection">读取我选中的文字</span>
+            <span class="tiny-pro">PRO</span>
+          </button>
+        </section>
+
+        <section class="result-panel" id="resultPanel" hidden>
+          <div class="result-head">
+            <div>
+              <div class="eyebrow" id="resultEyebrow" data-i18n="popup.result">提取结果</div>
+              <h2 id="resultTitle" data-i18n="popup.pageTitle">页面标题</h2>
+            </div>
+            <div class="confidence" id="confidenceBadge">
+              <span class="confidence-value">—</span>
+              <span class="confidence-label" data-i18n="common.confidence">置信度</span>
+            </div>
+          </div>
+          <div class="result-meta">
+            <span id="resultSource" data-i18n="popup.resultSource">来源</span>
+            <span class="meta-separator"></span>
+            <span id="resultCount">0 个字段</span>
+            <span class="result-cache" id="resultCache" hidden data-i18n="popup.noRepeatCharge">未重复计次</span>
+          </div>
+
+          <div class="result-view-tabs" role="tablist">
+            <button class="result-tab is-active" type="button" data-view="fields" data-i18n="common.fields">字段</button>
+            <button class="result-tab" type="button" data-view="rows">
+              <span data-i18n="common.table">表格</span> <span id="rowCountBadge">0</span>
+            </button>
+          </div>
+
+          <div class="fields-view" id="fieldsView"></div>
+          <div class="rows-view" id="rowsView" hidden></div>
+
+          <div class="export-bar">
+            <button class="secondary-button" id="copyButton" type="button">
+              <i data-lucide="copy"></i><span data-i18n="common.copy">复制</span>
+            </button>
+            <button class="secondary-button" id="csvButton" type="button">
+              <i data-lucide="file-down"></i><span>CSV</span>
+            </button>
+            <button class="secondary-button pro-export" id="jsonButton" type="button">
+              <i data-lucide="braces"></i><span>JSON</span>
+            </button>
+            <button class="secondary-button pro-export" id="saveButton" type="button">
+              <i data-lucide="bookmark-plus"></i><span data-i18n="common.save">保存</span>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <main id="historyView" class="main-view" hidden>
+        <div class="subview-head">
+          <button class="icon-button" id="historyBackButton" type="button" data-i18n-aria-label="popup.back" aria-label="返回">
+            <i data-lucide="arrow-left"></i>
+          </button>
+          <div>
+            <div class="eyebrow">PRO LIBRARY</div>
+            <h1 data-i18n="popup.historyTitle">提取历史</h1>
+          </div>
+          <button class="icon-button" id="clearHistoryButton" type="button" data-i18n-aria-label="popup.clearHistory" aria-label="清空历史">
+            <i data-lucide="trash-2"></i>
+          </button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </main>
+
+      <footer class="app-footer">
+        <span><i data-lucide="shield-check"></i> <span data-i18n="popup.dataLocal">数据仅在本机处理</span></span>
+        <a href="options.html" target="_blank" data-i18n="popup.privacySettings">隐私与设置</a>
+      </footer>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+      <dialog class="upgrade-dialog" id="upgradeDialog">
+        <button class="dialog-close" id="dialogCloseButton" type="button" data-i18n-aria-label="common.close" aria-label="关闭">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="upgrade-mark"><i data-lucide="sparkles"></i></div>
+        <div class="eyebrow">KEYLENS PRO</div>
+        <h2 data-i18n="popup.dialogTitle">把重复提取变成一条工作流</h2>
+        <p data-i18n="popup.dialogDescription">解锁全部结构化模式、自定义字段、批量标签页、JSON 与 50 条历史记录。</p>
+        <div class="upgrade-points">
+          <span><i data-lucide="check"></i> <span data-i18n="popup.dialogRows">300 行 / 页面</span></span>
+          <span><i data-lucide="check"></i> <span data-i18n="popup.dialogUnlimited">无每日提取限制</span></span>
+          <span><i data-lucide="check"></i> <span data-i18n="popup.dialogNoAi">不按 AI 额度另计费</span></span>
+        </div>
+        <button class="primary-button compact" id="dialogUpgradeButton" type="button">
+          <span class="button-copy">
+            <strong data-i18n="popup.dialogUpgrade">查看 Pro 方案</strong>
+            <small data-i18n="popup.dialogTrial">支持 7 天试用</small>
+          </span>
+          <i data-lucide="arrow-up-right"></i>
+        </button>
+      </dialog>
+    </div>
+
+    <script src="../vendor/lucide.min.js"></script>
+    <script src="i18n.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

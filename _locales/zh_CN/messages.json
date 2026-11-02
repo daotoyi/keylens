@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "KeyLens — 网页关键信息提取器"
+  },
+  "extShortName": {
+    "message": "KeyLens"
+  },
+  "extDescription": {
+    "message": "从任意网页提取摘要、联系人、商品、文章和列表数据。免费版本地可用，Pro 解锁自定义字段、批量标签页和历史记录。"
+  },
+  "commandOpen": {
+    "message": "打开 KeyLens"
+  }
+}
